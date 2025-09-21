@@ -51,7 +51,7 @@ export default function KnownVariants({
       ? parseInt(variant.location.replaceAll(",", ""))
       : null;
 
-    const refAltMatch = variant.title.match(/(\w)>(\w)/);
+    const refAltMatch = /(\w)>(\w)/.exec(variant.title);
 
     if (refAltMatch && refAltMatch.length === 3) {
       variantDetails = {
